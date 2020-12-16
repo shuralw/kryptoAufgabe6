@@ -48,6 +48,8 @@
     <Compile Include="EuclidExtendedSolution.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="public_key.cs" />
+    <Compile Include="RSASolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
