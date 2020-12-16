@@ -26,6 +26,8 @@ namespace xeuclid
             Console.WriteLine("b): gcd(" + a + " , " + b + ") = {" + solution.D + ", {" + solution.X + ", " + solution.Y + "}}");
         }
 
+
+
     }
 
 }
