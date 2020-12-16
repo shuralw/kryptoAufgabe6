@@ -17,9 +17,9 @@ namespace xeuclid
 
             RSASolver rsaSolver = new RSASolver();
             Console.WriteLine("Aufgabe 1: ");
-            rsaSolver.Solve(Arthurs_Key_Aufgabe1, Fords_Key_Aufgabe1);
+            rsaSolver.Solve(Arthurs_Key_Aufgabe1, Fords_Key_Aufgabe1, chiffre_Aufgabe1);
             Console.WriteLine("Aufgabe 2: ");
-            rsaSolver.Solve(Arthurs_Key_Aufgabe2, Fords_Key_Aufgabe2);
+            rsaSolver.Solve(Fords_Key_Aufgabe2, Arthurs_Key_Aufgabe2, chiffre_Aufgabe2);
 
             Console.ReadKey();
         }
