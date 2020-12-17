@@ -23,14 +23,13 @@ namespace xeuclid
             EuclidExtended euclidExtended = new EuclidExtended(a, b);
             EuclidExtendedSolution solution = euclidExtended.solve();
 
-            BigInteger M = BigInteger.ModPow(chiffre, solution.D, public_Key_Arthur.N);
+            BigInteger M = BigInteger.ModPow(chiffre, solution.X, public_Key_Arthur.N);
 
-            //Console.WriteLine("gcd(" + a + " , " + b + ") = {" + solution.D + ", {" + solution.X + ", " + solution.Y + "}}");
-            Console.WriteLine("gcd(" + a + " , " + b + ") = ");
-
-            Console.WriteLine("D: " + solution.D);
-            Console.WriteLine("X: " + solution.X);
-            Console.WriteLine("Y: " + solution.Y);
+            Console.WriteLine("gcd(" + a + " , " + b + ") = {" + solution.D + ", {" + solution.X + ", " + solution.Y + "}}");
+            // Console.WriteLine("gcd(" + a + " , " + b + ") = ");
+            // Console.WriteLine("D: " + solution.D);
+            // Console.WriteLine("X: " + solution.X);
+            // Console.WriteLine("Y: " + solution.Y);
 
             Console.WriteLine("Message: " + M);
         }
