@@ -14,6 +14,8 @@ namespace xeuclid
         // https://assignmentshark.com/blog/extended-euclidean-algorithm-example/
         static void Main(string[] args)
         {
+            LöseAufgabe1();
+            LöseAufgabe2();
             Console.ReadKey();
         }
 
@@ -23,14 +25,22 @@ namespace xeuclid
             RSASolver rsaSolver = new RSASolver();
             BigInteger M = rsaSolver.BerechneMessageAnhandEinesChiffratsUndPublicKeys(Arthurs_Key_Aufgabe1, Fords_Key_Aufgabe1, chiffre_Aufgabe1);
             BigInteger C_Kontrolle = rsaSolver.BerechneChiffrat(Arthurs_Key_Aufgabe1, M);
+
+            Console.WriteLine("Zwischenlösung des EEA: ");
+            Console.WriteLine("gcd(" + rsaSolver.a + " , " + rsaSolver.b + ") = {" + rsaSolver.solution.D + ", {" + rsaSolver.solution.X + ", " + rsaSolver.solution.Y + "}}");
+            Console.WriteLine("M = " + rsaSolver.M);
         }
 
         private static void LöseAufgabe2()
         {
             Console.WriteLine("Aufgabe 2: ");
             RSASolver rsaSolver = new RSASolver();
-            BigInteger M = rsaSolver.BerechneMessageAnhandEinesChiffratsUndPublicKeys(Arthurs_Key_Aufgabe2, Fords_Key_Aufgabe2, chiffre_Aufgabe2);
+            BigInteger M = rsaSolver.BerechneMessageAnhandEinesChiffratsUndPublicKeys(Fords_Key_Aufgabe2, Arthurs_Key_Aufgabe2, chiffre_Aufgabe2);
             BigInteger C_Kontrolle = rsaSolver.BerechneChiffrat(Arthurs_Key_Aufgabe2, M);
+
+            Console.WriteLine("Zwischenlösung des EEA: ");
+            Console.WriteLine("gcd(" + rsaSolver.a + " , " + rsaSolver.b + ") = {" + rsaSolver.solution.D + ", {" + rsaSolver.solution.X + ", " + rsaSolver.solution.Y + "}}");
+            Console.WriteLine("M = " + rsaSolver.M);
         }
 
         static public_key Arthurs_Key_Aufgabe1 = new public_key()
