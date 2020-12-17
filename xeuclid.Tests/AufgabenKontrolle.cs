@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace xeuclid.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class AufgabenKontrolle
     {
         [TestMethod]
         public void Aufgabe1_Dechiffrieren()
