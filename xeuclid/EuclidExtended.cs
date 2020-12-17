@@ -5,12 +5,12 @@ namespace xeuclid
 {
     public class EuclidExtended
     {
-        private BigInteger a, b;
 
         public EuclidExtended()
         {
         }
 
+        private BigInteger a, b;
         public EuclidExtended(BigInteger a, BigInteger b)
         {
             this.a = a;
