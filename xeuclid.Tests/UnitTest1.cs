@@ -8,12 +8,55 @@ namespace xeuclid.Tests
     public class UnitTest1
     {
         [TestMethod]
-        public void Aufgabe2()
+        public void Aufgabe1_Dechiffrieren()
         {
             RSASolver rsaSolver = new RSASolver();
-            rsaSolver.Solve(Fords_Key_Aufgabe2, Arthurs_Key_Aufgabe2, chiffre_Aufgabe2);
-            
-            rsaSolver.Solve(Arthurs_Key_Aufgabe1, Fords_Key_Aufgabe1, chiffre_Aufgabe1);
+            BigInteger M = rsaSolver.BerechneMessageAnhandEinesChiffratsUndPublicKeys(Arthurs_Key_Aufgabe1, Fords_Key_Aufgabe1, chiffre_Aufgabe1);
+
+            // 112 soll herauskommen, prüfe ob dies gegeben ist.
+            Assert.AreEqual(112, M);
+        }
+
+        [TestMethod]
+        public void Aufgabe2_Dechiffrieren()
+        {
+            // Arrange
+            RSASolver rsaSolver = new RSASolver();
+
+            // Act
+            BigInteger M = rsaSolver.BerechneMessageAnhandEinesChiffratsUndPublicKeys(Fords_Key_Aufgabe2, Arthurs_Key_Aufgabe2, chiffre_Aufgabe2);
+
+            // Assert
+            // 42 soll herauskommen, prüfe ob dies gegeben ist.
+            Assert.AreEqual(42, M);
+        }
+
+        [TestMethod]
+        public void Aufgabe1_ChiffreZurKontrolle()
+        {
+            // Arrange
+            RSASolver rsaSolver = new RSASolver();
+            BigInteger M = 112;
+
+            // Act 
+            BigInteger C_Kontrolle = rsaSolver.BerechneChiffrat(Arthurs_Key_Aufgabe1, M);
+
+            // Assert
+            Assert.AreEqual(chiffre_Aufgabe1, C_Kontrolle);
+        }
+
+        [TestMethod]
+        public void Aufgabe2_ChiffreZurKontrolle()
+        {
+            // Arrange
+            RSASolver rsaSolver = new RSASolver();
+            BigInteger M = 42;
+
+            // Act 
+            BigInteger C_Kontrolle = rsaSolver.BerechneChiffrat(Fords_Key_Aufgabe2, M);
+
+            // Assert
+            Assert.AreEqual(chiffre_Aufgabe2, C_Kontrolle);
         }
 
 
@@ -45,10 +88,5 @@ namespace xeuclid.Tests
             N = BigInteger.Parse("8426787171468382497075769357030611980814685788816257398102710770897246707635297760774759792373215209813848976420620420784548514222696366158140174407697178456459496638227776376886099407473515210480211767300220008668414377545044685658970131856283919959367080468375610676782674134025062853802165025709299151440079688790957995816451657881792767625455020761844813293082113111815333796507322859004543179840288109175394621725262012835735899917596920833597957719961691988259685474684646672054835590480479532791649613390772338664115220731756733799369417161132341744402629093797964181079824578424248571013550675119181587766747"),
             e = 65537
         };
-
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
     }
 }

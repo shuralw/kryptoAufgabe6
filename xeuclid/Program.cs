@@ -14,14 +14,23 @@ namespace xeuclid
         // https://assignmentshark.com/blog/extended-euclidean-algorithm-example/
         static void Main(string[] args)
         {
-
-            RSASolver rsaSolver = new RSASolver();
-            Console.WriteLine("Aufgabe 1: ");
-            rsaSolver.Solve(Arthurs_Key_Aufgabe1, Fords_Key_Aufgabe1, chiffre_Aufgabe1);
-            Console.WriteLine("Aufgabe 2: ");
-            rsaSolver.Solve(Fords_Key_Aufgabe2, Arthurs_Key_Aufgabe2, chiffre_Aufgabe2);
-
             Console.ReadKey();
+        }
+
+        private static void LöseAufgabe1()
+        {
+            Console.WriteLine("Aufgabe 1: ");
+            RSASolver rsaSolver = new RSASolver();
+            BigInteger M = rsaSolver.BerechneMessageAnhandEinesChiffratsUndPublicKeys(Arthurs_Key_Aufgabe1, Fords_Key_Aufgabe1, chiffre_Aufgabe1);
+            BigInteger C_Kontrolle = rsaSolver.BerechneChiffrat(Arthurs_Key_Aufgabe1, M);
+        }
+
+        private static void LöseAufgabe2()
+        {
+            Console.WriteLine("Aufgabe 2: ");
+            RSASolver rsaSolver = new RSASolver();
+            BigInteger M = rsaSolver.BerechneMessageAnhandEinesChiffratsUndPublicKeys(Arthurs_Key_Aufgabe2, Fords_Key_Aufgabe2, chiffre_Aufgabe2);
+            BigInteger C_Kontrolle = rsaSolver.BerechneChiffrat(Arthurs_Key_Aufgabe2, M);
         }
 
         static public_key Arthurs_Key_Aufgabe1 = new public_key()
