@@ -3,6 +3,8 @@ using System.Numerics;
 
 namespace xeuclid
 {
+    // Algorithmus Source:
+    // https://assignmentshark.com/blog/extended-euclidean-algorithm-example/
     public class EuclidExtended
     {
 
