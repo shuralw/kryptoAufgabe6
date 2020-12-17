@@ -24,6 +24,7 @@ namespace xeuclid
             EuclidExtendedSolution solution = euclidExtended.solve();
 
             BigInteger M = BigInteger.ModPow(chiffre, solution.X, public_Key_Arthur.N);
+            BigInteger C_Kontrolle = BigInteger.ModPow(M, public_Key_Arthur.e,public_Key_Arthur.N);
 
             Console.WriteLine("gcd(" + a + " , " + b + ") = {" + solution.D + ", {" + solution.X + ", " + solution.Y + "}}");
             // Console.WriteLine("gcd(" + a + " , " + b + ") = ");
@@ -32,6 +33,8 @@ namespace xeuclid
             // Console.WriteLine("Y: " + solution.Y);
 
             Console.WriteLine("Message: " + M);
+
+            Console.WriteLine("Kontrolle: " + C_Kontrolle);
         }
 
 
